@@ -1,6 +1,6 @@
 # Instructions for setting up Markdoc on NearlyFreeSpeech.Net
 
-This guide gives instructions on how to set up a Markdoc wiki on a NearlyFreeSpeech web hosting account.
+This guide gives instructions on how to set up a Markdoc wiki on a NearlyFreeSpeech web hosting account. (This is the method used to host this page.)
 
 The content for the wiki will be kept in a Git repository. Pushing the repository to the webserver will cause the website to be freshly rebuilt.
 
