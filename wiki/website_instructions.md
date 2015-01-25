@@ -1,11 +1,12 @@
+# Instructions for setting up Markdoc on NearlyFreeSpeech.Net
 
-This guide gives instructions on how to set up a Markdoc wiki on a NearlyFreeSpeech web hosting account.
+This guide gives instructions on how to set up a Markdoc wiki on a NearlyFreeSpeech web hosting account. (This is the method used to host this page.)
 
 The content for the wiki will be kept in a Git repository. Pushing the repository to the webserver will cause the website to be freshly rebuilt.
 
 The instructions assume you are working on a Windows computer; it should be even easier than this if you are using OSX or Linux.
 
-# Server side setup
+## Server side setup
 
 Log into your NearlyFreeSpeech website via SSH and perform the following steps:
 
@@ -17,7 +18,7 @@ Log into your NearlyFreeSpeech website via SSH and perform the following steps:
 5. Make the script executable: `chmod +x /home/private/git/mywiki/hooks/post-receive`
 
 
-## Content of `post-receive` shell script
+### Content of `post-receive` shell script
 
 
 ```bash
@@ -61,7 +62,7 @@ Note: if you get an error like...
 ... when running this (or any) BASH script - it means that your shell script has Windows line endings. Try `dos2unix post-receive` to fix that. Refer [StackOverflow](http://stackoverflow.com/questions/2920416/configure-bin-shm-bad-interpreter).
 
 
-# Windows desktop setup
+## Windows desktop setup
 
 You will work on the website content on your Windows desktop, pushing the changes to the NearlyFreeSpeech.Net server when you are ready to publish the website.
 
@@ -84,6 +85,73 @@ Tips:
 
 * If you set up public-key authentication, you won't have to type your NearlyFreeSpeech.Net password every time you do a `git push nfsn`.
 
-# Public Key Authentication
+## Example  output after `git push nfsn`
 
-Follow 
+```
+C:\Users\lws\Documents\GitHub\morrowind-dnd3.5>git push nfsn
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 1.11 KiB | 0 bytes/s, done.
+Total 3 (delta 2), reused 0 (delta 0)
+remote: ==== Making temporary git clone====
+remote: Cloning into '/home/private//git/tmp_deploy/morrowind-dnd3.5'...
+remote: done.
+remote: ==== Building site ====
+remote: markdoc: DEBUG: Running markdoc.build
+remote: markdoc: DEBUG: Running markdoc.clean-temp
+remote: markdoc.clean-temp: DEBUG: makedirs /home/private/git/tmp_deploy/morrowi
+nd-dnd3.5/.tmp
+remote: markdoc: DEBUG: Running markdoc.sync-html
+remote: markdoc.sync-html: DEBUG: makedirs /home/private/git/tmp_deploy/morrowin
+d-dnd3.5/.html
+remote: markdoc.sync-html: DEBUG: rsync -vaxq --cvs-exclude --delete --ignore-er
+rors --include=.htaccess --exclude=.* --exclude=_* .tmp/ default-static/ .html/
+remote: markdoc.sync-html: DEBUG: rsync completed
+remote: markdoc: DEBUG: Running markdoc.build-listing
+remote: markdoc.build-listing: DEBUG: Generating listing for /
+remote: markdoc.build-listing: DEBUG: cp //_list.html //index.html
+remote: markdoc.build-listing: DEBUG: Generating listing for /media
+remote: markdoc.build-listing: DEBUG: cp /media/_list.html /media/index.html
+remote: markdoc.build-listing: DEBUG: Generating listing for /media/sass
+remote: markdoc.build-listing: DEBUG: cp /media/sass/_list.html /media/sass/inde
+x.html
+remote: markdoc.build-listing: DEBUG: Generating listing for /media/css
+remote: markdoc.build-listing: DEBUG: cp /media/css/_list.html /media/css/index.
+html
+remote: ==== Beginning rsync ====
+remote: sending incremental file list
+remote: ./
+remote: index.html
+remote: media/
+remote: media/index.html
+remote: media/css/
+remote: media/css/index.html
+remote: media/sass/
+remote: media/sass/index.html
+remote:
+remote: sent 10,279 bytes  received 115 bytes  20,788.00 bytes/sec
+remote: total size is 17,994  speedup is 1.73
+remote: ==== Cleaning up temporary files ====
+To ssh://lws_lws@ssh.phx.nearlyfreespeech.net:/home/private/git/morrowind-dnd3.5
+/
+   e311a6f..c608a32  master -> master
+
+C:\Users\lws\Documents\GitHub\morrowind-dnd3.5>
+```
+
+## Tips
+
+Markdoc assumes that you will have the following in your `.htaccess` file, to rewrite requests for `/page` to `/page.html`.
+
+```
+Options +MultiViews
+
+<FilesMatch "\.html$">
+  ForceType 'application/xhtml+xml; charset=UTF-8'
+</FilesMatch>
+```
+
+## Public Key Authentication
+
+TODO: Add instructions for setting up public key auth.
