@@ -10,7 +10,7 @@ The Warrior is the first Guardian Constellation and he protects his charges duri
 
 Effects:
 * Gain a free feat from the Fighter bonus feats list.
-* - 2 Will saving throw.
+* -2 Will saving throw.
 
 ## The Mage
 
@@ -19,15 +19,16 @@ The Mage is a Guardian Constellation whose Season is Rain's Hand when magicka wa
 
 Effects:
 * Gain a free metamagic feat.
-* - 2 Reflex saving throw.
+* -2 Reflex saving throw.
 
 ## The Thief
 
 The Thief is the last Guardian Constellation, and her Season is the darkest month of Evening Star. Her Charges are the Lover, the Shadow, and the Tower. Those born under the sign of the Thief are not typically thieves, though they take risks more often and only rarely come to harm. They will run out of luck eventually, however, and rarely live as long as those born under other signs.
 
 Effects:
+
 * Gain Uncanny Dodge. (If you already have Uncanny Dodge, gain Improved Uncanny Dodge.)
-* - 2 Fortitude saving throw.
+* -2 Fortitude saving throw.
 
 2014-05-18: Alternate implementation - +2 Dodge AC, -2 Fort save.
 
@@ -36,6 +37,7 @@ Effects:
 The Serpent wanders about in the sky and has no Season, though its motions are predictable to a degree. No characteristics are common to all who are born under the sign of the Serpent. Those born under this sign are the most blessed and the most cursed.
 
 Effects:
+
 * +4 on Fortitude saves vs. poison and disease
 * +2 Reflex Saves
 
@@ -44,6 +46,7 @@ Effects:
 The Lady is one of the Warrior's Charges and her Season is Heartfire. Those born under the sign of the Lady are kind and tolerant.
 
 Effects:
+
 * +2 Sense Motive.
 * +1 Luck bonus to all saves
 
@@ -52,6 +55,7 @@ Effects:
 The Steed is one of the Warrior's Charges, and her Season is Mid Year. Those born under the sign of the Steed are impatient and always hurrying from one place to another.
 
 Effects:
+
 * Your land movement speed increases by 10 feet.
 * -4 Acuity.
 
@@ -62,6 +66,7 @@ Effects:
 The Lord's Season is First Seed and he oversees all of Tamriel during the planting. Those born under the sign of the Lord are stronger and healthier than those born under other signs.
 
 Effects:
+
 * Gain one extra hit point per character level.
 * When reduced to negative hit points, you stabilise automatically.
 
@@ -70,6 +75,7 @@ Effects:
 The Apprentice's Season is Sun's Height. Those born under the sign of the apprentice have a special affinity for magick of all kinds, but are more vulnerable to magick as well.
 
 Effects:
+
 * Gain bonus spell slots per day as if your spellcasting ability were +4 higher than it actually is. If you have multiple spellcasting classes, this bonus applies to all of them. This stacks with the Altmer bonus.
 * -1 all saving throws vs. spells and magical effects.
 
@@ -78,6 +84,7 @@ Effects:
 The Atronach (often called the Golem) is one of the Mage's Charges. Its season is Sun's Dusk. Those born under this sign are natural sorcerers with deep reserves of magicka, but they cannot use stored magicka.
 
 Effects:
+
 * Gain 1 "easy metamagic" feat for free.
 * Gain bonus spell slots per day as if your spell-casting ability was +8 points higher than it actually is. If you have multiple spellcasting classes, this bonus applies to all of them. This stacks with the Altmer bonus.
 * You cannot craft or use: wands, scrolls, staves, or any other spell-trigger/spell-completion item. You can attempt to use these devices using Use Magic Device.
@@ -89,6 +96,7 @@ Effects:
 The Ritual is one of the Mage's Charges and its Season is Morning Star. Those born under this sign have a variety of abilities depending on the aspects of the moons and the Divines.
 
 Effects:
+
 * A number of times per day equal to your Wisdom modifier, you can cast a Conjuration [Healing] spell at a distance of 30  feet, as if using the Reach Spell feat. You must succeed on a ranged touch attack to bestow the spell on the recipient.
 * Gain Lay on Hands as per Paladin.
 
@@ -97,6 +105,7 @@ Effects:
 The Lover is one of the Thief's Charges and her season is Sun's Dawn. Those born under the sign of the Lover are graceful and passionate.
 
 Effects:
+
 * +2 all charisma-based skill checks.
 * SLA Charm Person 1/day.
 
@@ -107,6 +116,7 @@ Effects:
 The Shadow's Season is Second Seed. The Shadow grants those born under her sign the ability to hide in shadows.
 
 Effects:
+
 * +3 Stealth and add Stealth to your list of class skills.
 * SLA: Swift Invisibility 1/day.
 
@@ -115,5 +125,6 @@ Effects:
 The Tower is one of the Thief's Charges and its Season is Frostfall. Those born under the sign of the Tower have a knack for finding gold and can open locks of all kinds.
 
 Effects:
+
 * +3 Open Lock and +3 Disable Device. Add Open Lock and Disable Device to your list of class skills.
 * Gain trapfinding as per rogue.
