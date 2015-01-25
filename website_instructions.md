@@ -10,9 +10,56 @@ The instructions assume you are working on a Windows computer; it should be even
 Log into your NearlyFreeSpeech website via SSH and perform the following steps:
 
 1. Install Markdoc: `easy_install --user markdoc`
-2. Add this line to the top of your `
-2. Initialise a new, bare, git repository: `git init /home/private/git/mywiki --bare`. Note your choice of directory for later.
-3. 
+2. Add this line to the top of your `~/.bashrc`: `export PATH=$PATH:$HOME/.local/bin
+`. (This will put `markdoc` on your `PATH`.)
+3. Initialise a new, bare, git repository: `git init /home/private/git/mywiki --bare`. Note your choice of directory for later.
+4. Create a shell script called `/home/private/git/mywiki/hooks/post-receive` and paste in the shell script below.
+5. Make the script executable: `chmod +x /home/private/git/mywiki/hooks/post-receive`
+
+
+## Content of `post-receive` shell script
+
+
+```bash
+#!/bin/sh
+
+# Partially plagiarised from http://majorursa.net/content/using-jekyll-nearlyfreespeechnet
+
+# Put Python local packages on the PATH
+export PATH=$PATH:$HOME.local/bin/
+
+REPONAME=mywiki
+GIT_REPO=$HOME/git/$REPONAME
+TMP_GIT_CLONE=$HOME/git/tmp_deploy/$REPONAME
+PUBLIC_WWW=/home/public/mywiki/
+
+echo "==== Making temporary git clone===="
+git clone $GIT_REPO $TMP_GIT_CLONE
+cd $TMP_GIT_CLONE
+
+echo "==== Building site ===="
+markdoc --verbose build
+
+echo "==== Beginning rsync ===="
+rsync -vax --cvs-exclude --delete --ignore-errors --include=.htaccess --exclude=.* --exclude=_* .html/ $PUBLIC_WWW/
+
+echo "==== Cleaning up temporary files ===="
+rm -Rf $HOME/git/tmp_deploy/$REPONAME/.git/objects
+rm -Rf $HOME/git/tmp_deploy/$REPONAME/.git
+rm -Rf $HOME/git/tmp_deploy/$REPONAME
+
+exit
+
+```
+
+
+
+Note: if you get an error like...
+
+`bash: ./post-receive: /bin/sh^M: bad interpreter: No such file or directory`
+
+... when running this (or any) BASH script - it means that your shell script has Windows line endings. Try `dos2unix post-receive` to fix that. Refer [StackOverflow](http://stackoverflow.com/questions/2920416/configure-bin-shm-bad-interpreter).
+
 
 # Windows desktop setup
 
@@ -25,7 +72,7 @@ Where `terminal commands` are shown, execute these in a `cmd.exe` or Powershell 
 4. Initialise new wiki: `markdoc.exe init --vcs-ignore git C:\mywiki\`
 5. Goto new wiki: `cd C:\mywiki`
 6. Initialise new git repository: `git init .`
-7. Add git remote: `git remote add nfsn ssh://<username>_<site>@ssh.<servername>.nearlyfreespeech.net:/home/private/git/mywiki`.
+7. Add git remote: `git remote add nfsn ssh://<username>_<site>@ssh.<servername>.nearlyfreespeech.net:/home/private/git/mywiki/`. Note the trailing slash.
 	* `nfsn` is a short nickname you will use when pushing to the web host, i.e. `git push nfsn`.
 	* `username` is your NearlyFreeSpeech.net username.
 	* `sitename` is your NearlyFreeSpeech.net site name.
