@@ -1,3 +1,4 @@
+# Instructions for setting up Markdoc on NearlyFreeSpeech.Net
 
 This guide gives instructions on how to set up a Markdoc wiki on a NearlyFreeSpeech web hosting account.
 
@@ -5,7 +6,7 @@ The content for the wiki will be kept in a Git repository. Pushing the repositor
 
 The instructions assume you are working on a Windows computer; it should be even easier than this if you are using OSX or Linux.
 
-# Server side setup
+## Server side setup
 
 Log into your NearlyFreeSpeech website via SSH and perform the following steps:
 
@@ -17,7 +18,7 @@ Log into your NearlyFreeSpeech website via SSH and perform the following steps:
 5. Make the script executable: `chmod +x /home/private/git/mywiki/hooks/post-receive`
 
 
-## Content of `post-receive` shell script
+### Content of `post-receive` shell script
 
 
 ```bash
@@ -61,7 +62,7 @@ Note: if you get an error like...
 ... when running this (or any) BASH script - it means that your shell script has Windows line endings. Try `dos2unix post-receive` to fix that. Refer [StackOverflow](http://stackoverflow.com/questions/2920416/configure-bin-shm-bad-interpreter).
 
 
-# Windows desktop setup
+## Windows desktop setup
 
 You will work on the website content on your Windows desktop, pushing the changes to the NearlyFreeSpeech.Net server when you are ready to publish the website.
 
@@ -84,7 +85,7 @@ Tips:
 
 * If you set up public-key authentication, you won't have to type your NearlyFreeSpeech.Net password every time you do a `git push nfsn`.
 
-# Example  output after `git push nfsn`
+## Example  output after `git push nfsn`
 
 ```
 C:\Users\lws\Documents\GitHub\morrowind-dnd3.5>git push nfsn
@@ -139,6 +140,18 @@ To ssh://lws_lws@ssh.phx.nearlyfreespeech.net:/home/private/git/morrowind-dnd3.5
 C:\Users\lws\Documents\GitHub\morrowind-dnd3.5>
 ```
 
-# Public Key Authentication
+## Tips
 
-Follow 
+Markdoc assumes that you will have the following in your `.htaccess` file, to rewrite requests for `/page` to `/page.html`.
+
+```
+Options +MultiViews
+
+<FilesMatch "\.html$">
+  ForceType 'application/xhtml+xml; charset=UTF-8'
+</FilesMatch>
+```
+
+## Public Key Authentication
+
+TODO: Add instructions for setting up public key auth.
