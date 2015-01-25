@@ -9,6 +9,7 @@ All player characters have one constellation as their birthsign.
 The Warrior is the first Guardian Constellation and he protects his charges during their Seasons. The Warrior's own season is Last Seed when his Strength is needed for the harvest. His Charges are the Lady, the Steed, and the Lord. Those born under the sign of the Warrior are skilled with weapons of all kinds, but prone to short tempers.
 
 Effects:
+
 * Gain a free feat from the Fighter bonus feats list.
 * -2 Will saving throw.
 
@@ -18,6 +19,7 @@ Effects:
 The Mage is a Guardian Constellation whose Season is Rain's Hand when magicka was first used by men. His Charges are the Apprentice, the Golem, and the Ritual. Those born under the Mage have more magicka and talent for all kinds of spellcasting, but are often arrogant and absent-minded.
 
 Effects:
+
 * Gain a free metamagic feat.
 * -2 Reflex saving throw.
 
