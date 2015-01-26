@@ -12,8 +12,18 @@ The Markdown source code for this website is hosted on [GitHub](https://github.c
 
 You can raise any issues or suggestions at the [GitHub issue tracker for this project](https://github.com/LiaungYip/morrowind-dnd3.5/issues). Pull requests are also welcome.
 
+## Contents
+
+For a full sitemap see the [_list page](/_list).
+
 Main Contents:
+
 * [Rules](/rules)
 
 Other Contents:
+
 * [How to create a website similar to this](/website_instructions) - useful if you fork this project.
+
+## Disclaimer
+
+See [Disclaimer](/disclaimer).
