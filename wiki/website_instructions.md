@@ -42,7 +42,7 @@ echo "==== Building site ===="
 markdoc --verbose build
 
 echo "==== Beginning rsync ===="
-rsync -vax --cvs-exclude --delete --ignore-errors --include=.htaccess --exclude=.* --exclude=_* .html/ $PUBLIC_WWW/
+rsync -vax --cvs-exclude --delete --ignore-errors --include=.htaccess --exclude=.* .html/ $PUBLIC_WWW/
 
 echo "==== Cleaning up temporary files ===="
 rm -Rf $HOME/git/tmp_deploy/$REPONAME/.git/objects
