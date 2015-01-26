@@ -23,7 +23,7 @@ Drinking booze enhances some of your abilities while penalising others.
 ### Table: Types of Booze
 
 | Quality | Name | Cost | Weight (per serving) | Effects | Description |
-| ------- | ---- | ---- | ------ | ----------- |
+| ------- | ---- | ---- | -------------------- | ------- | ----------- |
 | Cheap | Mazte | 5 cp | 1 lb | +2 STR, -2 WIS, -2 INT | Cheap and nasty drink made from fermented saltrice. (Rice wine) |
 | Cheap | Shein | 1 sp | 0.5 lb | +2 CON, -2 INT | A wine made from comberries. (Red wine) |
 | Average | Greef | 2 gp | 0.1 lb | +2 STR, -2 DEX | A brandy made from comberries. (Port) |
