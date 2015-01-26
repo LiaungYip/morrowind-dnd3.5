@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN"
+    "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+        {% block xmlns -%}
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:foaf="http://xmlns.com/foaf/0.1/"
+        {%- endblock %}>
+
+    {% import "macros/html" as html -%}
+    {% import "macros/crumbs" as breadcrumbs with context -%}
+
+    <head>
+    {% block head %}
+
+        {% block meta %}
+        <meta http-equiv="Content-Type" content="application/xhtml+xml; charset=UTF-8" />
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        {% endblock %}
+
+        <title>
+        {% block title_prefix -%}
+            {% if 'wiki-name' in config %}{{ config['wiki-name']|e }} » {% endif %}
+        {%- endblock %}
+        {% block title -%}
+            {{ title }}
+        {%- endblock %}
+        </title>
+
+        {% block css %}
+        {{ html.cssimport(make_relative("/media/css/normalize.css")) }}
+        {{ html.cssimport(make_relative("/media/css/foundation.css")) }}
+        {{ html.cssimport(make_relative("/media/css/app.css")) }}
+        {% endblock %}
+
+        {{ html.jsimport(make_relative("/media/js/vendor/custom.modernizr.js"))}}
+        {% block js %}
+        {% endblock %}
+
+        {% block analytics %}
+        {% if 'google-analytics' in config %}
+            <!-- Google Analytics -->
+            <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', '{{ config['google-analytics'] }}']);
+            _gaq.push(['_trackPageview']);
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+            })();
+            </script>
+        {% endif %}
+        {% endblock analytics %}
+    {% endblock head %}
+    </head>
+
+    <body {% block body_attrs %}{% endblock %}>
+    {% block body %}
+
+        <!-- Header and Nav -->
+        <div class="row">
+            <h2 class="header">{{ config['wiki-name']|e }}</h2>
+        </div>
+        <!-- End Header and Nav -->
+
+        {% block body_header %}
+        {% block crumbs %}
+            {{ breadcrumbs.crumbs(crumbs) }}
+        {% endblock crumbs %}
+        {% endblock body_header %}
+
+        <div id="content" class="row">
+            {% block content_header %}
+            {% endblock content_header %}
+
+            {% block content %}
+            {% endblock content %}
+
+            {% block content_footer %}
+            {% endblock content_footer %}
+        </div>
+
+        {% block body_footer %}
+            <div id="footer"></div>
+        {% endblock body_footer %}
+
+        {{ html.jsimport(make_relative("/media/js/vendor/jquery.js"))}}
+        {{ html.jsimport(make_relative("/media/js/vendor/foundation.min.js"))}}
+        {{ html.jsimport(make_relative("/media/js/app.js"))}}
+
+    {% endblock body %}
+    </body>
+</html>

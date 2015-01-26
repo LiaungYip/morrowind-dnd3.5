@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ directory|e }}{% endblock %}
+
+{% block body_attrs %}class="listing"{% endblock %}
+
+{% block content_header %}
+<h2>
+  {% if directory|e %}
+    {{ directory|e }}
+  {% else %}
+    Home
+  {% endif %}
+</h2>
+{% endblock content_header %}
+
+{% block content %}
+
+  {% if sub_directories|length > 1 %}
+  <div class="large-12 columns">
+  <h3 class="subheader">Folders</h3>
+  <table id="subdirs" class="large-12 columns">
+    {% for subdir in sub_directories %}
+      {% if subdir.basename|e != "media" %}
+      <tr>
+        <td class="name">
+          <a class="dirlink" href="{{ make_relative(subdir.href)|e }}">
+            {{ subdir.basename|e }}
+          </a>
+        </td>
+      </tr>
+      {% endif %}
+    {% endfor %}
+  </table>
+  </div>
+  {% endif %}
+
+  {% if pages %}
+  <div class="large-12 columns">
+  <h3 class="subheader">Pages</h3>
+  <table id="pages" class="large-12 columns">
+    {% for page in pages %}
+      <tr>
+        <td class="name">
+          <a href="{{ make_relative(page.href)|e }}.html" title="{{ page.title|e }}">
+            {{ page.title|e }}
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  </div>
+  {% endif %}
+
+
+  {% if files %}
+  <div class="large-12 columns">
+  <h3 class="subheader">Files</h3>
+  <table id="files" class="large-12 columns">
+    {% for file in files %}
+      <tr>
+        <td class="name">
+          <a href="{{ make_relative(file.href)|e }}">
+            <code>{{ file.basename|e }}</code>
+          </a>
+        </td>
+      </tr>
+    {% endfor %}
+  </table>
+  </div>
+  {% endif %}
+{% endblock %}
