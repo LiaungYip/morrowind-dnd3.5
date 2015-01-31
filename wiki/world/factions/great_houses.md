@@ -14,13 +14,13 @@ House Telvanni is currently in a phase of aggressive expansion.
 
 House Redoran is based in the Ashlands around Red Mountain. Their house seat is at Ald'Ruhn.
 
-The Redoran are the defenders of Morrowind, with a strong military focus and a culture of 'duty and piety'.
+The Redoran are the traditional defenders of Morrowind, with a strong military focus and a culture of 'duty and piety'.
 
 Their fortunes are in decline due to the continuing troubles at Red Mountain, and the increasing frequency of ash storms and blight. 
 
 ## House Hlaalu
 
-House Hlaalu are based in the hospitable Wesh Gash region of Vvardenfell. House Hlaalu has formed close relations with Imperial trading concerns to further its own goals of commercial and industrial dominance.
+House Hlaalu are based in the hospitable Wesh Gash region of Vvardenfell. House Hlaalu has formed close relations with the Empire to further its own goals of commercial and industrial dominance.
 
 As Imperial sympathisers, House Hlaalu's fortunes have risen with the increasing Imperial presence on Vvardenfell. Due to their rapid adoption of Imperial values, House Hlaalu are the only house to discourage the institution of slavery.
 
