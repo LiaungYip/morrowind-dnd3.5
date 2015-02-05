@@ -5,7 +5,7 @@
 The ten knowledge skills in the d20 SRD have been simplified to six knowledge skills.
 
 | Skill | d20 SRD skills | Topics | Creatures Identified |
-| ----- | -------------- | ------ |
+| ----- | -------------- | ------ | -------------------- |
 | Arcana | Arcana | Magic. The undead. Elementals. Alchemy ingredients other than animals and plants. | Undead. Elementals. |
 | Dwemer | Arch/Eng, Dungeoneering | The built environment (buildings, aqueducts, fortifications, bridges, etc.) Dwemer ruins. Machinery. Construct-type creatures. | Dwemer. Constructs. |
 | Daedra | Religion, The Planes | Daedric gods. Daedra-worshipping cults. Daedric ruins. The planes of Oblivion. Daedric creatures. |  Daedra |
