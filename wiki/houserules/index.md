@@ -33,8 +33,9 @@ Brief outline is below - not necessarily complete. See specific pages for full d
 	* Improved (Bull Rush, Overrun, Sunder) merged
 * [Tome of Battle errata](/houserules/tome_of_battle_errata)
 * Class "total conversions"
-	* Replace the SRD Paladin with OneWinged4ngel's "Rebalanced Paladin".
+	* Replace the SRD Paladin with the "Rebalanced Paladin" by OneWinged4ngel and Seerow.
 		* [Original posting](https://web.archive.org/web/20071121223300/http://forums.gleemax.com/showthread.php?t=761045) (archive.org)
+		* [Local copy](/external/rebalanced_paladin)
 	* Replace the [Miniatures Handbook Marshal](https://web.archive.org/web/20100402190822/http://www.wizards.com/default.asp?x=dnd/ex/20030906b) with Tempest_Stormwind's "Sublime Way Variant Marshal".
 		* [Original posting](http://community.wizards.com/forum/previous-editions-general/threads/2275061) (WotC forums)
 		* [Local copy](/external/rebalanced_marshal)
