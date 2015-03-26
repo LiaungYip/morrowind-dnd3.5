@@ -18,7 +18,9 @@ For a full sitemap see the [_list page](/_list).
 
 Main Contents:
 
+* [Creatures](/creatures)
 * [Rules](/rules)
+* 
 
 Other Contents:
 
